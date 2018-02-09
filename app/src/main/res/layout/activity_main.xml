@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="Registro"
+            type="com.osbolivia.mvvmexample.ViewModel.UserModel" />
+        <variable
+            name="RegistroEvent"
+            type="com.osbolivia.mvvmexample.Commands.UserRegistro"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.osbolivia.mvvmexample.MainActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="@{Registro.nombreHint}"
+                android:text="@={Registro.nombre}"
+                android:id="@+id/txtNombreRegistro"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="@{Registro.apellidoHint}"
+                android:text="@={Registro.apellido}"
+                android:id="@+id/txtApellidoRegistro"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="REGISTRAR"
+                android:onClick="@{(v)->RegistroEvent.onClickRegistro()}"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</layout>
